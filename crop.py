@@ -15,7 +15,11 @@ def crop_images(original_path, cropped_path, goal_dim=(3500, 2500)):
 
 def crop_image(image_path, goal_dim=(3500, 2500)):
     image = cv2.imread(image_path)
+    image = cv2.resize(image, (3024,4032))
     mid = (image.shape[0]//2, image.shape[1]//2)
+    print(image.shape)
+    
+    print(image.shape)
     cropped_image = image[mid[0]-goal_dim[0]//2:mid[0]+goal_dim[0]//2, mid[1]-goal_dim[1]//2:mid[1]+goal_dim[1]//2]
     return cropped_image
 

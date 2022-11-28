@@ -8,6 +8,7 @@ Findings
 - Converting images to black and white produces a better result than with color
 
 
+Missing 37-39, 41-46, 49, 51
 Training
 - [x] Convert images from heic to jpg
 - [x] Determine a good size to crop the cards
@@ -16,20 +17,21 @@ Training
 Testing
 - [ ] Classify playing cards of the same dimensions
 - [ ] Classify playing cards of smaller dimension
-- [ ] Classfiy playing cards of larger dimension
-- [ ] Classify a playing card with multiple different backgounds
+- [ ] Classify playing cards of larger dimension
+- [ ] Classify a playing card with multiple different backgrounds
 - [ ] Classify multiple playing cards in a single frame
 - [ ] Classify rotated playing cards
 - [ ] Classify partial playing cards
-- [ ] Classfiy playing cards in a video
+- [ ] Classify playing cards in a video
 
 Algorithm
-- [x] Crop the test image from the center
+- [x] Take each test image and convert to binary
 - [x] Compare with all ground truth images and output those over 0.5
-- [ ] Bonus: Scale images to specified size using gaussian pyramid
-- [ ] Bonus: Add corner detection
-- [ ] Bonus: Add edge detection
-- [ ] Bonus: Combine both to crop out closed shapes within the image
-- [ ] Bonus: Rotate images to horizontal alignment
+- [ ] Bonus: Use Canny Edge Detection to preprocess images to get rectangles with aspect ratio of 1.4
+- [ ] Bonus: Rotate rectangular images to horizontal alignment
+- [ ] Bonus: Orient and scale images to specified size using gaussian pyramid
 - [ ] Bonus: Save images into an uncompressed format like .bmp to save on computation time
-- [ ] Count the number of non white areas, ncc matching
+
+Potential
+- [ ] NCC template matching with binary images an scaling from smaller image
+- [ ] Noise removal by binary morphology and removing small regions
